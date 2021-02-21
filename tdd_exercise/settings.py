@@ -74,10 +74,22 @@ WSGI_APPLICATION = 'tdd_exercise.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# configuring postgreSQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'xword_data',
+        'USER': 'postgres',
+        'PASSWORD': 'paulbit10',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
