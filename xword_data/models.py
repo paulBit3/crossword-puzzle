@@ -22,7 +22,7 @@ class Puzzle(models.Model):
     
 
     def datepublished(self):
-        return self.date.strftime('%Y %m %d ')
+        return self.date.strftime( '%Y-%m-%d ')
 
 
     def __str__(self):
