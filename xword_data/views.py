@@ -13,6 +13,7 @@ from .models import *
 
 def index(request):
 """ the home page of our xword_data app  """
+return render(request, 'pages/index.html', {})
 
 def drill(request):
 """ the DrillView of our xword_data app  """
