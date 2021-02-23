@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.urls import reverse
 
 
 
@@ -22,11 +23,15 @@ class Puzzle(models.Model):
     
 
     def datepublished(self):
-        return self.date.strftime( '%Y-%m-%d ')
+        return self.date.strftime('%Y-%m-%d')
 
 
     def __str__(self):
         return f'{self.title}'
+    
+    # returning the path of the url
+    def get_absolute_url(self):
+        return reverse('puzzle:puzzle_details', kwargs={'pk': self.id})
 
 
 
@@ -39,6 +44,11 @@ class Entry(models.Model):
     
     def __str__(self):
         return self.entry_text
+    
+    # returning the length of the entry
+    def __len__(self):
+        return len(self.entry_text)
+
 
 
 class Clue(models.Model):
