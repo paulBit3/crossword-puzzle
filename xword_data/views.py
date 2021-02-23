@@ -12,13 +12,13 @@ from .models import *
 
 
 def index(request):
-""" the home page of our xword_data app  """
-return render(request, 'pages/index.html', {})
+    """ the home page of our xword_data app  """
+    return render(request, 'pages/index.html', {})
 
 def drill(request):
-""" the DrillView of our xword_data app  """
+    """ the DrillView of our xword_data app  """
 
 def display_xwordanswer(request):
-""" the AnswerView of our xword_data app  """
+    """ the AnswerView of our xword_data app  """
 
 
