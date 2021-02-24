@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} | Join Puzzle {% endblock %}
+
+{% block content %}
+<div class="container account">
+    <div class="card-body">
+        <form action="{% url 'join' %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" value="" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

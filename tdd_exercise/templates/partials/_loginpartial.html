@@ -16,7 +16,23 @@
   <!-- <p>Welcome to Crossword Puzzle, {{ user.username }} ! </p> -->
 {% else %}
 <ul class="nav navbar-nav navbar-right">
-    <li><a class="nav-link" href="{% url 'login' %}">
+    <li
+    {% if 'register' in request.path %}
+      class="nav-item active mr-3"
+    {% else %}
+      class="nav-item mr-3"
+    {% endif %}
+    ><a class="nav-link" href="{% url 'join' %}">
+        <i class="fas fa-user-plus"></i>Join
+    </a>
+    </li>
+    <li
+    {% if 'login' in request.path %}
+      class="nav-item active mr-3"
+    {% else %}
+      class="nav-item mr-3"
+    {% endif %}
+    ><a class="nav-link" href="{% url 'login' %}">
         <i class="fas fa-sign-in-alt"></i>
         Login
     </a></li>

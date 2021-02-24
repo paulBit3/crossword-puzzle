@@ -56,8 +56,8 @@ class JoinForm(forms.Form):
     )
 
 # getting the username value and call valide_unique_user for filter
-def clean_username(self):
-    username = self.clean_data['username']
+def cleaned_username(self):
+    username = self.cleaned_data['username']
 
     # calling our filter function
     valide_unique_user(
@@ -66,4 +66,11 @@ def clean_username(self):
 
     return username
 
-""" we can implement this method for password, email, ... """
+
+def cleaned_password(self):
+    password = self.cleaned_data['password']
+
+    return password
+
+
+""" we can implement this method for password2, email, ... """
