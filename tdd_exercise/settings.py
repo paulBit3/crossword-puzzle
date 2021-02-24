@@ -138,3 +138,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'tdd_exercise', 'static')]
+
+LOGIN_URL = 'accounts:login'
+
+# LOGIN URL REDIRECT TO OTHER PAGE
+LOGIN_REDIRECT_URL = '/'

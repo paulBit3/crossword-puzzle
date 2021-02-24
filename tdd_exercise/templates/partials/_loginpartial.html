@@ -1,0 +1,25 @@
+<!-- this template will display our login and logout links on teh page -->
+{% if user.is_authenticated %}
+  <i class="fas fa-sign-out-alt"></i> Logout
+  <form action="{% url 'logout' %}" method="POST" id="logout" class="navbar-right">
+    {% csrf_token %}
+    <input type="hidden">
+    <ul class="nav navbar-nav navbar-right ml-auto">
+        <li><span class="navbar-brand">Logged as:
+            {{ user.username }}</span>
+        </li>
+        <li><a href="javascript:{document.getElementById('logout').submit()}">
+            Logout</a>
+        </li>
+    </ul>
+  </form>
+  <!-- <p>Welcome to Crossword Puzzle, {{ user.username }} ! </p> -->
+{% else %}
+<ul class="nav navbar-nav navbar-right">
+    <li><a class="nav-link" href="{% url 'login' %}">
+        <i class="fas fa-sign-in-alt"></i>
+        Login
+    </a></li>
+</ul>
+<!-- <p>Welcome, new user. Please login</p> -->
+{% endif %}
